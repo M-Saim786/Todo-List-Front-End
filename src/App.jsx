@@ -35,6 +35,7 @@ function App() {
   }
 
   const DeleteTodo = (id) => {
+    console.log(id)
     dispatch(deleteTodo(id))
     setTimeout(() => {
       dispatch(getAllTodo())
@@ -50,7 +51,6 @@ function App() {
 
 
   useEffect(() => {
-    // show_todo()
     dispatch(getAllTodo())
 
   }, [dispatch])
@@ -108,7 +108,7 @@ function App() {
                         justifyContent: "space-between",
                         height: "auto",
                         alignItems: "baseline"
-                      }}>
+                      }} key={v._id}>
                         <Box sx={{ width: { lg: "80%", md: "80%", sm: "70%", xs: "70%" } }}>
                           <Typography>
                             {v.todo}

@@ -47,6 +47,7 @@ export const addTodo = createAsyncThunk("addTodo", async (todo) => {
 
 export const deleteTodo = createAsyncThunk("delete", async (id) => {
   // const axios = require("axios");
+  console.log(id);
   try {
     let config = {
       method: "delete",

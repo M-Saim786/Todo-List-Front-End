@@ -46,20 +46,20 @@ export const TodoSlice = createSlice({
       .addCase(addTodo.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message; // Set the error message if the request is rejected
-      })
-      .addCase(deleteTodo.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(deleteTodo.fulfilled, (state, action) => {
-        state.loading = false;
-        state.todo = action.payload;
-        state.error = null; // Reset error when request is fulfilled successfully
-      })
-      .addCase(deleteTodo.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message; // Set the error message if the request is rejected
       });
+    // .addCase(deleteTodo.pending, (state) => {
+    //   state.loading = true;
+    //   state.error = null;
+    // })
+    // .addCase(deleteTodo.fulfilled, (state, action) => {
+    //   state.loading = false;
+    //   // state.todo = action.payload;
+    //   state.error = null; // Reset error when request is fulfilled successfully
+    // })
+    // .addCase(deleteTodo.rejected, (state, action) => {
+    //   state.loading = false;
+    //   state.error = action.error.message; // Set the error message if the request is rejected
+    // });
   },
 });
 
